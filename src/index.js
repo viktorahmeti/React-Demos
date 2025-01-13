@@ -19,7 +19,7 @@ const sessions = [
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <Router>
+    <Router basename="/React-Demos">
         <Routes>
             <Route path="/" element={<App sessions={sessions} />} />
             {
