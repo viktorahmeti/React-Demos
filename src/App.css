@@ -1,0 +1,21 @@
+.Sessions-List{
+    list-style: none;
+    padding-left: 0;
+    margin-block: 0;
+}
+
+.Sessions-List li{
+    padding: 1rem;
+    box-shadow: inset 0 0 20px #1a1a1a30;
+    cursor: pointer;
+    transition: all .4s ease;
+}
+
+.Sessions-List li:hover{
+    transform: scale(1.01);
+}
+
+.Sessions-List a{
+    text-decoration: none;
+    color: rgb(12, 102, 227);
+}

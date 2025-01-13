@@ -1,0 +1,17 @@
+.Carousel{
+    display: flex;
+    gap: 1rem;
+}
+
+.Carousel button{
+    background-color: none;
+    border: none;
+    padding: 1rem;
+    font-size: 3rem;
+}
+
+.Carousel img{
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}

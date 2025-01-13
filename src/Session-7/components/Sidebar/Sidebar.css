@@ -1,0 +1,10 @@
+.Sidebar{
+    width: 100px;
+    height: 100px;
+    background-color: #010101;
+    transition: width .4s ease;
+}
+
+.Sidebar.hide{
+    width: 0;
+}

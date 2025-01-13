@@ -1,0 +1,21 @@
+.Code-Container{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.Code-Digit{
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+    text-align: center;
+    border: none;
+    box-shadow: inset 0 0 20px #60606050;
+    transition: box-shadow .4s ease;
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.Code-Digit:focus{
+    outline: none;
+    box-shadow: inset 0 0 20px #1d1d1d99;
+}
