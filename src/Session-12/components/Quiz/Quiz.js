@@ -1,5 +1,6 @@
 import './Quiz.css';
 import React, { useEffect, useState } from 'react'
+import { mockFetch } from '../../utils/utils';
 
 function Quiz({quiz, questions, onNext}) {
     const [index, setIndex] = useState(0);
@@ -31,22 +32,21 @@ function Quiz({quiz, questions, onNext}) {
                 return answer;
             }
         }));
-
-        answers[index] = e.target.value
     }
     
     function submit(){
         const userAnswers = answers.map(a => a === ''? null : parseInt(a));
-        
-        fetch(`http://10.10.32.38:8085/quiz/${quiz}/validate`, {
+
+        mockFetch(`validate/${quiz}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(userAnswers)}
+            body: JSON.stringify(userAnswers)
+        }
         ).then(res => res.json())
         .then(res => {
-            setResults(res.data);
+            setResults(res);
             setFinished(true);
         });
     }
@@ -55,7 +55,7 @@ function Quiz({quiz, questions, onNext}) {
         <button className='Quiz-Arrow' disabled={index == 0} onClick={prevQuestion}>&lt;</button>
         <div className='Quiz-Center'>
             <div className='Quiz-Question'>{questions[index]}</div>
-            <input disabled={finished} onChange={onAnswerChange} value={answers[index]} type='number' placeholder='Answer' className={`Quiz-Answer ${finished? results[index]? 'Correct' : 'Incorrect' : ''}`}></input>
+            <input disabled={finished} onChange={onAnswerChange} value={answers[index] || ''} type='number' placeholder='Answer' className={`Quiz-Answer ${finished? results[index]? 'Correct' : 'Incorrect' : ''}`}></input>
             {
                 index == questions.length - 1?
                 finished?

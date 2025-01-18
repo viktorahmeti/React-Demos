@@ -25,7 +25,7 @@ root.render(
         <Routes>
             <Route path="/" element={<App sessions={sessions} />} />
             {
-                sessions.map(s => <Route path={`/session-${s[0]}`} element={React.createElement(s[1])} />)
+                sessions.map(s => <Route key={s[0]} path={`/session-${s[0]}`} element={React.createElement(s[1])} />)
             }
         </Routes>
     </Router>

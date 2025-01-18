@@ -1,17 +1,16 @@
 import './App.css';
 import React, { useEffect, useState } from 'react'
 import Quiz from './components/Quiz/Quiz';
+import { mockFetch } from './utils/utils';
 
 function App() {
     const [questions, setQuestions] = useState([]);
     const [quiz, setQuiz] = useState(1);
     
     useEffect(() => {
-        fetch(`http://10.10.32.38:8085/quiz/${quiz}`)
+        mockFetch(`quiz/${quiz}`)
         .then(res => res.json())
-        .then(res => {
-        setQuestions(res.data.questions)
-        })
+        .then(res => setQuestions(res));
     }, [quiz])
 
     return (
