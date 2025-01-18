@@ -16,8 +16,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "serve": "serve -s build -l 5000 --basepath /React-Demos"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

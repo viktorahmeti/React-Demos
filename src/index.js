@@ -7,6 +7,7 @@ import {default as Session7} from './Session-7/App';
 import {default as Session8} from './Session-8/App';
 import {default as Session9} from './Session-9/App';
 import {default as Session10} from './Session-10/App';
+import {default as Session12} from './Session-12/App';
 import App from './App'
 
 const sessions = [
@@ -14,7 +15,8 @@ const sessions = [
     [7, Session7], 
     [8, Session8], 
     [9, Session9], 
-    [10, Session10]
+    [10, Session10],
+    [12, Session12]
 ]
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

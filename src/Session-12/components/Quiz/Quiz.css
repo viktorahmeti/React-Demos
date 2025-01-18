@@ -1,0 +1,64 @@
+.Quiz-Container{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    position: relative;
+}
+
+.Quiz-Arrow{
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 1rem;
+    transition: background-color .4s ease;
+}
+
+.Quiz-Arrow:hover{
+    background-color: rgb(234, 234, 234);
+}
+
+.Quiz-Center{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.Quiz-Question{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.Quiz-Answer{
+    border: none;
+    text-align: center;
+    font-size: 2rem;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.514);
+    transition: border-bottom .4s ease;
+}
+
+.Quiz-Answer:focus{
+    outline: none;
+    border-bottom: 2px solid black;
+}
+
+.Quiz-Answer.Correct{
+    border-bottom: 2px solid rgb(27, 211, 27);
+}
+
+.Quiz-Answer.Incorrect{
+    border-bottom: 2px solid rgb(240, 35, 35);
+}
+
+.Quiz-Button{
+    position: absolute;
+    bottom: -3rem;
+    background-color: black;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+}
