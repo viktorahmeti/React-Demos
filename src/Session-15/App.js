@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react'
+import usePersistentState from '../Session-16/usePersistentState';
 
 function App() {
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = usePersistentState('formData', {
         emri: '',
         mbiemri: '',
         accept: false,
@@ -9,7 +10,13 @@ function App() {
         country: 'AL'
     });
 
-    const [formErrors, setFormErrors] = useState(formData);
+    const [formErrors, setFormErrors] = useState({
+        emri: '',
+        mbiemri: '',
+        accept: '',
+        gender: '',
+        country: ''
+    });
 
     function updateField(e){
         setFormData({...formData, [e.target.name]: e.target.value})
