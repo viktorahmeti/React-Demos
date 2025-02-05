@@ -10,6 +10,7 @@ function useCounter(initialValue){
     function decrement(){
         setCount(count => count - 1);
     }
+    
     return {count, increment, decrement};
 }
 

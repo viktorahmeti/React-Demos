@@ -10,6 +10,7 @@ import {default as Session10} from './Session-10/App';
 import {default as Session12} from './Session-12/App';
 import {default as Session15} from './Session-15/App';
 import {default as Session16} from './Session-16/App';
+import {default as Session17} from './Session-17/App';
 import App from './App'
 
 const sessions = [
@@ -20,7 +21,8 @@ const sessions = [
     [10, Session10],
     [12, Session12],
     [15, Session15],
-    [16, Session16]
+    [16, Session16],
+    [17, Session17]
 ]
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -29,7 +31,7 @@ root.render(
         <Routes>
             <Route path="/" element={<App sessions={sessions} />} />
             {
-                sessions.map(s => <Route key={s[0]} path={`/session-${s[0]}`} element={React.createElement(s[1])} />)
+                sessions.map(s => <Route key={s[0]} path={`/session-${s[0]}/*`} element={React.createElement(s[1])} />)
             }
         </Routes>
     </HashRouter>
